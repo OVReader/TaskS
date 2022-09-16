@@ -35,6 +35,7 @@ public class Main {
                 .filter(t->t.getDescription().contains(filterString))
                 .collect(Collectors.toList());
                 return filteredList;
+
     }
 
     private static int countDeadlines(ArrayList<Task> tasksData) {
@@ -69,4 +70,19 @@ public class Main {
                 .forEach(System.out::println);
     }
 
+
+    private static int countDeadlineUsingStream(ArrayList<Task>tasks) {
+        int count = 0;
+        tasks.stream()
+                .filter(t -> t instanceof Deadline)
+                .count();
+        return (int) count;
+    }
+
+
+    public static void printDataStreams(ArrayList<Task> tasks) {
+        System.out.println("Printing data using streams");
+        tasks.stream()
+                .forEach(System.out::println);
+    }
 }
