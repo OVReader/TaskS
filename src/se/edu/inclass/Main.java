@@ -15,6 +15,7 @@ public class Main {
         DataManager dm = new DataManager("./data/data.txt");
         ArrayList<Task> tasksData = dm.loadData();
 
+//        System.out.println("All data:");
         System.out.println("Printing deadlines");
         printDeadlines(tasksData);
 
